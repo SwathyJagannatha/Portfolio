@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap JS (optional, if you need Bootstrap functionality) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Google Maps API script (replace YOUR_API_KEY_HERE with your actual Google Maps API key) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE"></script>
+    <style>
+        /* Additional CSS styles can be added here */
+        h1{
+            font-size: large;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+        header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        header ul li {
+            float: left;
+        }
+        header ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        header ul li a:hover {
+            background-color: #111;
+        }
+        .contact-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+        .contact-section h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .map-container {
+            height: 400px; /* Adjust height as needed */
+        }
+        .contact-form {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"]{
+            grid-column: span 2;
+            padding: 10px 20px;
+            background-color: #7628a7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3 ease;
+            margin-top: 20px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+            border-radius:10px;
+        }
+
+        form {
+            display:grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px; 
+            max-width: 600px;
+            margin: auto;
+            padding: 11px;
+            background: #6ad3be;
+            border-radius: 8px;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="./portfolio.html">Home</a></li>
+                <li><a href="./resumepage.html">Resume</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./projects.html">Portfolio Project</a></li>
+                <li><a class="active" href="./contact.html">Contact</a></li>
+        </ul>
+    
+        <img src="profile.jpg" alt="Profile Picture" style="width:200px"/>
+        <h1><b>Swathy Jagannatha</b></h1>
+        <p><b>Welcome to My Personal Portfolio</b></p>
+    </header>
+    
+    <div class="contact-section">
+        <div class="container">
+            <h1>Contact Me</h1>
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <div style="max-width:100%;overflow:hidden;color:red;width:500px;height:500px;">
+                        <div id="embedmap-canvas" style="height:100%; width:100%;max-width:100%;">
+                            <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=new+york&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <a class="googlemaps-html" href="https://www.embed-map.com" id="get-data-forembedmap"></a>
+                        <style>
+                            #embedmap-canvas img{
+                                max-width:200px;
+                                background:none!important;
+                                font-size: inherit;
+                                font-weight:inherit;
+                            }
+    
+                            div{
+                                display: flex;
+                                background: linear-gradient(orange,black );
+                            }
+                        </style>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form>
+                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="email" class="form-control mt-3" placeholder="Email">
+                            <input type="text" class="form-control mt-3" placeholder="Subject">
+                            <textarea class="form-control mt-3" rows="5" placeholder="Message"></textarea>
+                            <button type="submit" class="btn btn-primary mt-3">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <form>
+                <input type="email" placeholder="Your email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    
+        <div class="footer-copyright">
+            <p>© Swathy Jagannatha 2024. All rights reserved.</p>
+        </div>
+    
+        <div class="footer-legal">
+            <a href="#privacy-policy">Privacy Policy</a>
+            <a href="#terms-of-service">Terms of Service</a>
+        </div>
+    
+        <div class="footer-back-to-top">
+            <a href="#top">Back to Top</a>
+        </div>
+    </footer>
+</body>
+</html>

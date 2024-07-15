@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Personal Portfolio</title>
+    <style>
+
+      h1 {
+          text-align: center;
+          color: #333;
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 20px;
+        padding: 0;
+        /* Solid background */
+        /*background-color: rgba(240, 242, 245, 1) */
+        background: linear-gradient(green,rgb(233, 84, 58));
+    }
+
+    header {
+        background:linear-gradient(rgb(26, 18, 63),rgb(212, 87, 210));
+        color: white;
+        padding: 20px;
+        text-align: center;
+        /* Box shadow */
+        box-shadow: 4px 6px rgba(0, 0, 0, 0.1)
+    }
+
+    header {
+      /*background-color: #f2f2f2;*/
+      padding: 20px;
+      text-align: center;
+  }
+  header ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+  }
+  header ul li {
+      float: left;
+  }
+  header ul li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+  header ul li a:hover {
+      background-color: #111;
+  }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        /* Adjust spacing around container elements */
+        justify-content: space-around;
+        background: linear-gradient(rgb(198, 175, 133),rgb(48, 166, 177))
+    }
+
+    nav, section, article, aside {
+        padding: 20px;
+        margin: 10px;
+        background: linear-gradient(rgb(140, 225, 132),rgb(202, 102, 87));
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(102, 64, 64, 0.1);
+    }
+
+    nav, .main-content, aside {
+        flex: 1;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 2;
+    }
+
+    footer {
+      /* Slightly transparent footer */
+        background-color: rgba(111, 211, 208, 0.8);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      /* Slightly transparent header cells */
+       background-color: rgba(132, 123, 185, 0.8);
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: rgba(206, 125, 63, 0.8);
+        color: white;
+        border: none;
+        /* border-radius: 5px; */
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      /* background-color: #218838; */
+      /* background-color: rgba(33, 136, 56, 0.8); */
+      background-color: rgba(159, 230, 243, 0.8);
+      /*box-shadow: 0 0 15px rgba(225, 159, 243, 0.8);*/
+    }
+
+     /* Subtle animation */
+     button:hover {
+        animation: pulse 2s infinite; 
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+    img {
+        width: 100px;
+        height: auto;
+        border-radius: 100%;
+        /* Adding a border with transparency around the image */
+        /*border: 4px solid rgba(225, 225, 225, 0.6);*/
+        
+        /* A soft, white frame */
+        border: 5px solid rgba(8, 14, 14, 0.8);
+        opacity: 0.8;
+    }
+
+    img:hover{
+        opacity:1;
+        transition: opacity 0.3s ease;
+    }
+    /* Adding gradient for visual interest */
+    nav, footer {
+      background: linear-gradient(145deg, rgba(125, 117, 169, 0.8), rgba(230, 141, 220, 0.8));
+    }
+
+    .main-content, aside {
+      background: linear-gradient(145deg, rgb(64, 124, 162), rgba(218, 173, 173, 0.9));
+    }
+
+    /* Horizontal, Vertical, Blur, Color */
+    section, aside, article {
+      box-shadow: 0 4px 8px rgba(205, 103, 181, 0.2);
+    }
+
+    /* Clip a linear gradient */
+    h1 {
+      background: linear-gradient(to right, #88d181, #b88cb1);
+      background-clip: text;
+      color: transparent;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    nav a:hover {
+      transition: color 0.3 ease; 
+      color: #90756b;
+    }
+    
+    img {
+      animation: rotate 10s infinite linear; 
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      } to {
+        transform: rotate(360deg);
+      }
+    }
+    </style>
+</head>
+   <body>
+        <header>
+          <ul>
+            <li><a href="./portfolio.html">Home</a></li>
+            <li><a href="./resumepage.html">Resume</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./projects.html">Portfolio Project</a></li>
+            <li><a class="active" href="./contact.html">Contact</a></li>
+            </ul>
+  
+          <img src="profile.jpg" alt="Profile Picture" stye="width:200px"/> 
+          <h1><b> Swathy Jagannatha</b></h1>
+          <p><b> Welcome to My Personal Portfolio</b>
+          <p>
+      </header>
+    
+        <div class="container">
+          <nav>
+            <h2>Contact</h2>
+            <p>Email:swathyjagannatha308@gmail.com</p>
+            <p>
+              LinkedIn: <a href="https://www.linkedin.com/in/swathyjagannatha">Swathy Jagannatha</a>
+            </p>
+          </nav>
+      
+          <div class="main-content">
+
+            <section id="resume">
+              <h2>Resume</h2>
+              <iframe src="my_resume.pdf" width="100%" height="600px"></iframe>
+              <p><a href="my_resume.pdf" download>Download Resume (PDF)</a></p>
+            </section>
+
+            <section>
+              <h2>Skills</h2>
+              <table border="1">
+                <tr>
+                  <th>Technology</th>
+                  <th>Proficiency</th>
+                  <th>Years of Experience</th>
+                </tr>
+                <tr>
+                  <td>Python</td>
+                  <td>Intermediate</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>Java</td>
+                  <td>Intermediate</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>C,C++</td>
+                  <td>Expert</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>HTML/CSS</td>
+                  <td>Expert</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>JavaScript</td>
+                  <td>Intermediate</td>
+                  <td>3</td>
+                </tr>
+              </table>
+            </section>
+        
+            <article>
+              <h2>Education</h2>
+              <ul>
+                <li>
+                  <a href="https://sjce.ac.in/"
+                    ><strong>Sri JayaChamrajendra College of Engineering</strong></a
+                  >,Computer Science and Engineering Bachelor's Degree, 2017
+                </li>
+              </ul>
+            </article>
+
+            <article>
+              <h2>Work Experience</h2>
+              <section>
+                  <h3>Software Developer 2 at Infinera India Pvt Ltd</h3>
+                  <p>August 2019 - February 2022</p>
+                  <ul>
+                      <li>Worked in an application team that provided FCAPS functionality and took part in the design and development of extended features for an Optical Fiber Network System.</li>
+                      <li>Developed modules for alarm handling and configuration management which accomplished a 30% improvement in speed and reliability.</li>
+                      <li>Deployed Tacacs+ accounting feature to record user actions and as an auditing tool for security services efficiently, leading to a 15% increase in departmental productivity.</li>
+                      <li>Managed code optimization and defect fixing, orchestrated code reviews, and implemented new features, resulting in a 10% reduction in system load times.</li>
+                      <li>Collaborated with a cross-functional team of 5 members to implement new features and refinements and to deliver seamless solutions.</li>
+                  </ul>
+              </section>
+      
+              <section>
+                  <h3>Software Developer 1 at Infinera India Pvt Ltd</h3>
+                  <p>July 2017 - July 2019</p>
+                  <ul>
+                      <li>Supported several customers on priority to provide at least 30 RCAs and hotfixes for feature bugs, security, and vulnerability issues.</li>
+                      <li>Formulated and streamlined automation scripts in Python, improving code quality by 10%.</li>
+                      <li>Contributed to developing and maintaining web applications using Java, Spring, and Hibernate frameworks, leading to a 20% increase in performance.</li>
+                      <li>Expanded the equipment migration support for the mux-ponder.</li>
+                  </ul>
+              </section>
+          </article>
+
+
+            <aside>
+              <h2>Testimonials</h2>
+              <blockquote cite="http://example.com/bryer-feedback">
+                "I had the pleasure of mentoring Swathy Jagannatha during her time at Coding Temple. Swathy exhibited remarkable proficiency in Python, consistently delivering high-quality projects, such as the To-Do List Application and the Contact Management System. Her dedication, quick learning ability, and collaborative spirit made her stand out as an exceptional student. Swathy is well-prepared to excel in any software engineering role."
+              </blockquote>
+              <p>- Bryer Johnson, Lead Instructor at Coding Temple</p>
+            
+              <blockquote cite="http://example.com/jane-feedback">
+                "Swathy's work on our Digital Optical Transport Network was nothing short of impressive. She played a crucial role in developing modules for alarm handling, configuration management, and error reporting. Her contributions significantly improved our system's performance and reliability. Swathy's proactive approach and strong collaboration skills made her a valuable asset to our team. Her expertise in data structures, algorithms, and object-oriented programming sets her apart as an exceptional backend developer."
+              </blockquote>
+              <p>- Jane Smith, Project Manager at Infinera India Pvt Ltd</p>
+
+              <canvas id="testimonialChart" width="400" height="200"></canvas>
+            </aside>
+        
+            <script>
+              var ctx = document.getElementById('testimonialChart').getContext('2d');
+              var testimonialChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                      labels: ['Bryer Johnson', 'Jane Smith'],
+                      datasets: [{
+                          label: 'Rating',
+                          data: [9, 8], 
+                          backgroundColor: [
+                              'green',
+                              'teal'
+                          ],
+                          borderColor: [
+                              'rgba(75, 192, 192, 1)',
+                              'rgba(54, 162, 235, 1)'
+                          ],
+                          borderWidth: 1
+                      }]
+                  },
+                  options: {
+                      scales: {
+                          y: {
+                              beginAtZero: true,
+                              ticks: {
+                                  stepSize: 1,
+                                  suggestedMax: 10
+                              }
+                          }
+                      }
+                  }
+              });
+          </script>
+
+            <section>
+              <h2>Recent Projects</h2>
+              <p>Project Name: Personal Portfolio Using HTML,CSS</p>
+        
+              <pre><code>&lt;!-- HTML structure of the redesigned homepage --&gt;
+        &lt;div class="container"&gt;
+          &lt;header&gt;...&lt;/header&gt;
+          &lt;nav&gt;...&lt;/nav&gt;
+          &lt;main&gt;...&lt;/main&gt;
+          &lt;footer&gt;...&lt;/footer&gt;
+        &lt;/div&gt;
+              </code></pre>
+            </section>
+        
+            <section>
+              <h2>Podcast Features</h2>
+              <audio controls>
+                <source src="assets/invalid_keypress.mp3" type="audio/mp3" />
+                Your browser does not support the audio element.
+              </audio>
+            </section>
+        
+            <section>
+              <h2>Project Highlights</h2>
+              <video width="320" height="240" controls>
+                <source
+                  src="assets/Praline-Tin-GIF-Official_Proxy.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </section>
+
+            <section>
+              <h2>Tutorials & Talks</h2>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/J35jug1uHzE"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </section>
+        
+            <section>
+              <h2>Contact Me</h2>
+              <button>Contact via Email</button>
+            </section>
+          </div>
+        </div>
+
+          <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <form>
+              <input type="email" placeholder="Your email address">
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        
+          <div class="footer-copyright">
+            <p>© Swathy Jagannatha 2024. All rights reserved.</p>
+          </div>
+        
+          <div class="footer-legal">
+            <a href="#privacy-policy">Privacy Policy</a>
+            <a href="#terms-of-service">Terms of Service</a>
+          </div>
+        
+          <div class="footer-back-to-top">
+            <a href="#top">Back to Top</a>
+          </div>
+        </div>
+</body>
+</html>
